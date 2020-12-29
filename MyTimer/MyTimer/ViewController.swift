@@ -16,10 +16,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         mainLabel.font = UIFont.systemFont(ofSize: 30.0)
         mainLabel.textAlignment = .center
         mainLabel.text = "REMAINED TIME"
-    
+        
+        startButton.setImage(UIImage.init(named: "btn_start"), for: .normal)
+        stopButton.setImage(UIImage.init(named: "btn_stop"), for: .normal)
+        
+        
     }
 
 
