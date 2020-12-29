@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta2-sW-d0T">
-                                <rect key="frame" x="186" y="167" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta2-sW-d0T">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,10 +35,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ta2-sW-d0T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wbj-UO-6cp"/>
+                            <constraint firstItem="ta2-sW-d0T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tnR-Qq-H3g"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="au4-or-ZuC">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="pni-8h-pcI"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainLabel" destination="ta2-sW-d0T" id="Ii3-qf-Lbs"/>
+                        <outlet property="startButton" destination="ngp-K8-7wj" id="ohd-CN-uqz"/>
+                        <outlet property="stopButton" destination="r6D-ue-aaZ" id="ElP-Tp-S2U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
