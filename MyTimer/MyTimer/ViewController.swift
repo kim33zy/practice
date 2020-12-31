@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var barButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,7 @@ class ViewController: UIViewController {
         mainLabel.textAlignment = .center
         mainLabel.text = "REMAINED TIME"
         
-        startButton.setImage(UIImage.init(named: "btn_start"), for: .normal)
-        stopButton.setImage(UIImage.init(named: "btn_stop"), for: .normal)
+
         
         
     }
