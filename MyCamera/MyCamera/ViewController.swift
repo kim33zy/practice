@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var pictureImage: UIImageView!
     
@@ -16,6 +16,24 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func cameraButtonAction(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("camera is available")
+            
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.sourceType = .camera
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true, completion: nil)
+            
+        } else {
+            print("camera is not available")
+        }
+        
+        func imagePickerController(_ picker : UIImagePickerController, didFinishPickingMediaWithInfo info : [UIImagePickerController.InfoKey : Any]) {
+            pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
     @IBAction func shareButtonAction(_ sender: Any) {
     }
