@@ -33,10 +33,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func settingButton(_ sender: Any) {
+    
+        if let nowTimer = timer {
+            if nowTimer.isValid == true {
+                nowTimer.invalidate()
+            }
+        }
+        
+        performSegue(withIdentifier: "goSetting", sender: nil)
     }
+    
+    
     @IBAction func startButtonAction(_ sender: Any) {
+        
+        if let nowTimer = timer {
+            if nowTimer.isValid == true {
+                return
+            }
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timerInterrupt(_:)), userInfo: nil, repeats: true)
     }
+    
+    
     @IBAction func stopButtonAction(_ sender: Any) {
+        
+        if let nowTimer = timer {
+            if nowTimer.isValid == true {
+                nowTimer.invalidate()
+            }
+        }
     }
     
     func displayUpdate() -> Int {
@@ -56,6 +82,12 @@ class ViewController: UIViewController {
             count = 0
             timer.invalidate()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        count = 0
+        
+        _ = displayUpdate()
     }
     
 }
