@@ -28,10 +28,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngp-K8-7wj">
                                 <rect key="frame" x="57" y="478" width="140" height="140"/>
                                 <state key="normal" image="btn_start"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S3M-u8-epo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6D-ue-aaZ">
                                 <rect key="frame" x="217" y="478" width="140" height="140"/>
                                 <state key="normal" image="btn_stop"/>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jmw-Gl-DCE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -50,7 +56,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="au4-or-ZuC">
-                        <barButtonItem key="rightBarButtonItem" title="Setting Sconds" id="pni-8h-pcI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Setting Sconds" id="pni-8h-pcI">
+                            <connections>
+                                <action selector="settingButton:" destination="BYZ-38-t0r" id="sVW-J2-DPa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="pni-8h-pcI" id="hdc-6I-005"/>
@@ -64,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="OQX-gr-WWO">
             <objects>
-                <viewController id="qCK-oQ-6UJ" sceneMemberID="viewController">
+                <viewController id="qCK-oQ-6UJ" customClass="SettingViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfG-H2-1Hm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +88,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCO-MB-vCh">
                                 <rect key="frame" x="147" y="488" width="120" height="120"/>
                                 <state key="normal" image="btn_ decision"/>
+                                <connections>
+                                    <action selector="decisionButtonAction:" destination="qCK-oQ-6UJ" eventType="touchUpInside" id="2WN-5I-oHF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MrY-Il-lzu"/>
@@ -91,6 +104,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y00-Kq-2Aj"/>
+                    <connections>
+                        <outlet property="timerSettingPicker" destination="fBy-nm-xLu" id="hl2-cs-VLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmS-r6-fRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
