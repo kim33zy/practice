@@ -81,7 +81,16 @@ class ViewController: UIViewController {
         if displayUpdate() <= 0 {
             count = 0
             timer.invalidate()
+            
+            
+            let alertController = UIAlertController(title: "Finish", message: "Timer is finished", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
+            
         }
+        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
